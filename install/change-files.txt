@@ -1,0 +1,12 @@
+/kubspray/inventory/cluster/group_vars/k8s_cluster
+
+k8s-cluster.yml
+21, 69, 77-83, 101, 126, 136, 171, 177, 183-185, 219, 229, 268-269
+
+k8s-net-calico.yml
+80, 86
+
+/kubspray/inventory/cluster/group_vars/all
+
+all.yml
+7
