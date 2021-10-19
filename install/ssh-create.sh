@@ -2,8 +2,10 @@
 
 HOST_FILE="/root/hosts"
 ERROR_FILE="/tmp/ssh-copy_error.txt"
-PUBLIC_KEY_FILE="$1"
+PUBLIC_KEY_FILE=".ssh/id_rsa.pub"
+TMP_PASS="123456"
 
+apt install sshpass
 
 if [ ! -e .ssh ]; then
         mkdir .ssh
@@ -20,7 +22,7 @@ fi
 ssh-keygen -t rsa -f .ssh/id_rsa -q -P ""
 
 for IP in `cat $HOST_FILE`; do
-        ssh-copy-id -i $PUBLIC_KEY_FILE root@$IP 2>$ERROR_FILE
+        sshpass -p "$TMP_PASS" ssh-copy-id -i $PUBLIC_KEY_FILE root@$IP 2>$ERROR_FILE
         RESULT=$?
         if [ $RESULT -eq 0 ]; then
                 echo ""
