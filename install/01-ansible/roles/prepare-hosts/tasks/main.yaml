@@ -9,11 +9,11 @@
       - tar
     state: latest
 
-- name: Disable firewalld
+- name: Disable ufw
   service:
-    name: firewalld
+    name: ufw
     state: stopped
-    enabled: no
+    enabled: false
 
 - name: Check is swap enable
   shell: swapon
