@@ -4,7 +4,7 @@ HOST_FILE="/root/hosts"
 ERROR_FILE="/tmp/ssh-copy_error.txt"
 PUBLIC_KEY_FILE=".ssh/id_rsa.pub"
 TMP_PASS="123456"
-
+apt update
 apt install sshpass
 
 if [ ! -e .ssh ]; then

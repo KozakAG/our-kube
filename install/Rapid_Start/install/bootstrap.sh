@@ -12,5 +12,7 @@ echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
 
 # Swapoff and ufw
 echo "[TASK 3] Swapoff and ufw"
-ufw disable
-swapoff -a; sed -i '/swap/d' /etc/fstab
+systemctl stop ufw
+systemctl  disable ufw
+swapoff -a
+#; sed -i '/swap/d' /etc/fstab
